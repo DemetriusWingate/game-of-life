@@ -55,26 +55,11 @@ return getNeighborsOf(cell).filter((n) => contains.bind(state)(n));
 };
 
 const willBeAlive = (cell, state) => {
-<<<<<<< HEAD
-const livingNeighbors = getLivingNeighbors(cell, state);
-=======
 const getLivingNeighbors = this.getLivingNeighbors(cell, state);
->>>>>>> 8b05e76b5d173c5ebe7b6ea78e737fbbd5793eb5
 
 return (
   livingNeighbors.length === 3 ||
   (contains.call(state,cell) && livingNeighbors.length === 2)
-<<<<<<< HEAD
-  );
-};
-
-const calculateNext = (state) => {
-  const { bottomLeft, topRight } = corners(state);
-  let result = [];
-  for (let y = topRight[1] + 1; y >= bottomLeft[1] - 1; y--) {
-    for (let x = bottomLeft[0] - 1; x <= topRight[0] + 1; x++) {
-      result = result.concat(willBeAlive([x,y], state) ? [[x, y]] : []);
-=======
 );
 };
 
@@ -84,7 +69,6 @@ let result = [];
 for (let y = topRight[1] + 1; y >= bottomLeft[1] - 1; y--) {
   for (let x = bottomLeft[0] - 1; x <= topRight[0] + 1; x++) {
     result = result.concat(willBeAlive([x,y], state) ? [[x, y]] : []);
->>>>>>> 8b05e76b5d173c5ebe7b6ea78e737fbbd5793eb5
   }
 }
 return result;
